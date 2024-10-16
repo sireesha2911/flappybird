@@ -1,0 +1,127 @@
+/* Ensure the game container fits neatly on different screens */
+#game-container {
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  position: relative;
+  border: 2px solid #000; /* Add a border to the game container */
+  background-color: #87CEEB; /* Sky blue background for the game */
+  display: block;
+}
+
+/* Move score display box to the right */
+.score-display {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Move it to the right side */
+  padding: 15px; /* Increase padding for better readability */
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background for contrast */
+  color: white;
+  font-size: 20px; /* Increase font size */
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 10; /* Ensure it remains on top of other elements */
+}
+
+/* Adjust styling for caption box */
+.caption {
+  position: absolute;
+  bottom: 20px; /* Move the caption box lower to avoid heading */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  padding: 15px; /* Increased padding for better legibility */
+  background-color: rgba(0, 0, 0, 0.8); /* Make it slightly darker */
+  color: white;
+  font-size: 18px; /* Increased font size */
+  font-weight: bold;
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;
+  cursor: move; /* Indicate it can be dragged */
+  z-index: 10;
+}
+
+/* Buttons styling to make them more visible and user-friendly */
+button {
+  margin: 10px;
+  padding: 15px 20px; /* Increased padding for bigger buttons */
+  font-size: 18px; /* Increased font size for better readability */
+  font-weight: bold;
+  background-color: #008CBA; /* Add some color to the buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a hover effect */
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #005f73; /* Darken button color on hover */
+}
+
+/* Styling for caption settings section */
+.caption-settings {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.caption-box {
+  position: absolute;
+  z-index: 1000; /* Ensure it's above other elements */
+  border-radius: 8px; /* Optional: add some border radius */
+  padding: 10px; /* Optional: add some padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: add shadow */
+}
+
+.caption-settings label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.caption-settings input[type="text"],
+.caption-settings select,
+.caption-settings input[type="color"] {
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/* Add responsiveness to ensure a good look on different screen sizes */
+@media (max-width: 900px) {
+  #game-container {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* Maintain max height for small screens */
+  }
+
+  button {
+    width: 90%; /* Make buttons wider on smaller screens */
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .score-display {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  #game-container {
+    width: 100%;
+    height: 400px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .score-display {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
